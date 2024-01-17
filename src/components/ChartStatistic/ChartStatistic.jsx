@@ -24,7 +24,6 @@ const ChartStatistic = ({ data, expenseSummary, incomeSummary }) => {
       },
     ],
   };
-  const diff = Math.abs(incomeSummary - Math.abs(expenseSummary));
   return (
     <DoughnutContainerStyled>
       {(!expenseSummary && !incomeSummary && (
@@ -40,7 +39,7 @@ const ChartStatistic = ({ data, expenseSummary, incomeSummary }) => {
           </NotifStyled>
         )) || (
           <BalanceStyled>
-            <span>₴ {diff}</span>
+            <span>₴ {Math.abs(expenseSummary)}</span>
           </BalanceStyled>
         )}
       <Doughnut data={dataTr} />

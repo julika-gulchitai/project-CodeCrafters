@@ -50,9 +50,7 @@ const StatisticsDashboard = () => {
   };
 
   useEffect(() => {
-    // if (isLogged) {
     dispatch(fetchTransSumThunk({ month: chosenMonth, year: chosenYear }));
-    // }
   }, [dispatch, chosenMonth, chosenYear, isLogged]);
 
   const DropdownIndicator = props => {
@@ -69,30 +67,26 @@ const StatisticsDashboard = () => {
   return (
     <DropsWrap>
       <Select
-        id="month"
-        name="month"
         required
         options={months}
         placeholder="Select a month"
         onChange={handleOnMonth}
         styles={libStyles}
         isSearchable={false}
-        // default={months[chosenMonth - 1]}
+        defaultValue={months[chosenMonth - 1]}
         components={{
           DropdownIndicator,
           IndicatorSeparator: () => null,
         }}
       ></Select>
       <Select
-        id="year"
-        name="year"
         required
         options={years}
         placeholder="Select a year"
         onChange={handleOnYear}
         styles={libStyles}
         isSearchable={false}
-        // default={years.find(year => year.value === chosenYear)}
+        defaultValue={years.find(year => year.value === chosenYear)}
         components={{
           DropdownIndicator,
           IndicatorSeparator: () => null,

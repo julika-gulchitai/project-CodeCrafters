@@ -31,7 +31,7 @@ export const CurrencyTable = styled.div`
 `;
 
 export const CurrencyThead = styled.div`
-  background: rgba(255, 255, 255, 0.2);
+  background: var(--balance-bg);
   padding-left: 62px;
   margin-bottom: 24px;
   @media (min-width: 768px) and (max-width: 1279px) {
